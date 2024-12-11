@@ -411,7 +411,11 @@ def main():
             time.sleep(0.11)
     
     threading.Thread(target=statistics, daemon=True).start()
-    input()
+    while True:
+        try:
+            break
+        except KeyboardInterrupt:
+            break
 
 if __name__ == "__main__":
     try:
