@@ -77,7 +77,7 @@ class Sudos(object):
         
         attack_methods[self.attack_method](self, sock)
 
-        print(f"Web server's response:".center(os.get_terminal_size().columns, "-"))
+        print(f"Web server's response:".center(15, "-"))
         try:
             while True:
                 chunk = sock.recv(1024)
@@ -285,7 +285,7 @@ def show_banner():
         banner = file.read()
         file.close()
     
-    terminal_columns = os.get_terminal_size().columns
+    terminal_columns = 15
     max_line_cols = 0
 
     for line in banner.splitlines():
@@ -389,7 +389,7 @@ def main():
                 last_hrs_time = time.time()
                 last_requests = total_requests
 
-            terminal_column = os.get_terminal_size().columns
+            terminal_column = 15
 
             text = f"HR/S: {Colors.blue}{hrs:,}{Colors.reset} Total: {Colors.blue}{total_requests:,}{Colors.reset}"
             
